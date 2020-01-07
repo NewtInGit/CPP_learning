@@ -12,6 +12,7 @@ Stock::Stock()//默认构造函数
 }
 Stock::Stock(const std::string& company, long shares, double share_val)//为了防止混淆，定义class时，成员名为company_
 {
+	std::cout << "Constructor using " << company << " called" << std::endl;
 	company_ = company;
 	if (shares < 0)
 	{
@@ -66,7 +67,7 @@ void Stock::update(double price)
 	set_tot();
 }
 
-void Stock::show()
+void Stock::show() const
 {
 	std::cout.setf(std::ios_base::fixed, std::ios_base::floatfield);
 	std::cout.precision(3);

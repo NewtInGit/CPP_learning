@@ -20,7 +20,7 @@ public:
 	void buy(long num, double price);
 	void sell(long num, double price);
 	void update(double price);
-	void show();
+	void show() const;//保证show函数不会修改调用对象
 };
 
 

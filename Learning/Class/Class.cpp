@@ -6,22 +6,32 @@
 
 int main()
 {
-	Stock Apple("Apple Tec", 250, 15);
-	//Stock Apple = Stock("Apple Tec", 250, 15);    // 也可以
-	Apple.buy(15,15.812);
-	Apple.show();
-	Apple.sell(200, 14.24);
-	Apple.show();
+	using std::cout;
+	using std::endl;
+	const Stock example("Company name", 2000, 146);//常量
+	Stock stock1("Apple Tec", 250, 15);
+	Stock stock2 = Stock("Xiaomi", 150, 10);
+	cout << "Testing Function" << endl;
+	stock1.buy(15,15.812);
+	stock1.show();
+	stock1.sell(200, 14.24);
+	stock1.show();
+
+	cout << "Assigning stock1 to stock2" << endl;
+	stock2 = stock1;
+	cout << "Listing stock1 and stock2" << endl;
+	stock1.show();
+	stock2.show();
+
+	cout << "Using construtor to reset stock1" << endl;
+	stock1 = Stock();
+	stock1.show();
+
+	cout << "Show const Stock class" << endl;
+	example.show();
+
 	return 0;
 }
 
-// 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
-// 调试程序: F5 或调试 >“开始调试”菜单
-
-// 入门提示: 
-//   1. 使用解决方案资源管理器窗口添加/管理文件
-//   2. 使用团队资源管理器窗口连接到源代码管理
-//   3. 使用输出窗口查看生成输出和其他消息
-//   4. 使用错误列表窗口查看错误
-//   5. 转到“项目”>“添加新项”以创建新的代码文件，或转到“项目”>“添加现有项”以将现有代码文件添加到项目
-//   6. 将来，若要再次打开此项目，请转到“文件”>“打开”>“项目”并选择 .sln 文件
+//查看构建函数，哪种会被调用，什么时候会被清理
+//常量stock如何使用成员函数（定义和声明时添加const）
