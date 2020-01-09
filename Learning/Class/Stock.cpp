@@ -76,3 +76,14 @@ void Stock::show() const
 		<< "Share Price: " << share_val_ << std::endl
 		<< "Total Value: " << total_val_ << std::endl;
 }
+
+const Stock& Stock::topval(const Stock& s) const//返回Stock的引用，返回的是 Stock类的别名
+{
+	if (s.total_val_ > total_val_)
+	{
+		return s;
+	}
+	else
+		return *this;//this为指针，*解除引用
+
+}

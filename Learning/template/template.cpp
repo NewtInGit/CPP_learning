@@ -42,7 +42,7 @@ int main()
 
 	int d1[lim] = { 0,1,2,3,4,5,6,7 };
 	int d2[lim] = { 7,6,5,4,3,2,1,0 };
-	Swap(d1, d2,lim);
+	Swap(&d1, &d2,lim);
 	Show(d1);
 	cout << "and" << endl;
 	Show(d2);	
@@ -59,17 +59,17 @@ int main()
 	return 0;
 }
 
-template <typename AnyType>
-void Swap(AnyType &a, AnyType &b)
+template <typename T>
+void Swap(T &a, T &b)
 {
-	AnyType temp;
+	T temp;
 	temp = a;
 	a = b;
 	b = temp;
 }
 
 template<typename T>
-void Swap(T a[], T b[], int n)
+void Swap(T* a, T* b,int n)
 {
 	T temp;
 	for (int i = 0; i < n; i++)
@@ -114,3 +114,12 @@ void ShowJob(job j)
 //模板
 //模板的重载
 //模板的显示具体化，优先选择job
+//修改了数组Swap的传入，T可以为指针类型
+//所以下面运行也行
+
+//template <typename T>
+//void Swap(T* a, T* b, int n);
+
+//template <typename T>
+//void Swap(T a, T b)
+//{}

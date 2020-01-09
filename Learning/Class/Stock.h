@@ -21,6 +21,7 @@ public:
 	void sell(long num, double price);
 	void update(double price);
 	void show() const;//保证show函数不会修改调用对象
+	const Stock& topval(const Stock& s) const;//&s 是引用，地址相同，所以改变s就改变了传入变量。其他的是按值传递
 };
 
 
